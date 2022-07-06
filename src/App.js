@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import { CurrentWeather } from './components/CurrentWeather';
+import { ListDays } from './components/ListDays';
+import { Day } from './components/Day';
 import './App.css';
 
+import {useApi} from './useApi'
+import React from 'react';
+
 function App() {
+  const {
+    weather,
+    setWeather,
+    days,
+    setDays,
+    loading,
+    setLoading
+
+  } = useApi();
+
+  if(loading){
+    return <p>loading...</p>
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <p>Hola soy app</p>
+      <CurrentWeather
+        weather={weather}
+        setWeather={setWeather}
+
+        loading={loading}
+        setLoading={setLoading}
+      />
+      <ListDays
+        days={days}
+        setDays={setDays}
+
+        loading={loading}
+        setLoading={setLoading}
+      />
+    </div >
   );
 }
 

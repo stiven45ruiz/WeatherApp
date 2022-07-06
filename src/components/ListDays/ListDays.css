@@ -1,0 +1,26 @@
+.days__scroll{
+  width: auto;
+  justify-content: space-around;
+  overflow-x: scroll;
+}
+.days__scroll::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.days__scroll::-webkit-scrollbar-button:increment, 
+.days__scroll::-webkit-scrollbar-button{
+  display: none;
+}
+.days__scroll::-webkit-scrollbar:horizontal{
+  height: 5px;
+}
+.days__scroll::-webkit-scrollbar-thumb{
+  background-color: #787A91;
+  border-radius: 5px;
+  border: none;
+}
+
+.list__days{
+  display: flex;
+  width: auto;
+  padding: 10px;
+}

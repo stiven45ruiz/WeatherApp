@@ -1,0 +1,41 @@
+.currentWeather{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  align-items: center;
+
+}
+.currentWeather__details{
+  margin: 0 auto;
+}
+.currentWeather__details > h2{
+  font-size: 8rem;
+  font-weight: 500;
+}
+.currentWeather__details > h3{
+  font-size: 3rem;
+  font-weight: 600;
+}
+.currentWeather__details > h2 > span{
+  font-size: 4rem;
+  font-weight: 500;
+  vertical-align: super;
+}
+.currentWeather__more{
+  font-size: 1.6rem;
+  margin: 0 30px;
+}
+
+.currentWeater__stats{
+  list-style: none;
+  margin: 20px;
+}
+.currentWeater__stats > li{
+  font-size: 2rem;
+}
+.currentWeater__stats > li > span{
+  padding-right: 5px;
+}
+.currentWeather__actual{
+  text-transform: capitalize;
+}
