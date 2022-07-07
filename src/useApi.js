@@ -4,6 +4,7 @@ const axios = require('axios');
 
 const useApi = () =>{
   const [weather, setWeather] = useState(null)
+  const [weatherMore, setWeatherMore] = useState(null)
   const [days, setDays] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -16,6 +17,7 @@ const useApi = () =>{
     },
     params:{
         'appid': process.env.REACT_APP_API_KEY,
+        'units': 'metric',
     },
   });
 
@@ -33,7 +35,21 @@ const useApi = () =>{
       setLoading(false)
     };
     CallToApi();
+
+    const CallMoreInfoApi = async() =>{
+      const {data} = await api(`forecast?lat=3.5628657092422573&lon=-73.79595019932982`);
+      try {
+        setWeatherMore(data)
+      } catch (error) {
+        setLoading(true)
+        console.log(error)
+      }
+      console.log(data, 'call more api')
+      setLoading(false)
+    };
+    CallMoreInfoApi();
   }, [])
+
 
   // if(loading){
   //   return <p>Loading ...</p>
@@ -45,7 +61,9 @@ const useApi = () =>{
     days,
     setDays,
     loading,
-    setLoading
+    setLoading,
+    weatherMore, 
+    setWeatherMore
   };
 };
 

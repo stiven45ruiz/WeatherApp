@@ -3,12 +3,12 @@ import './CurrentWeather.css'
 
 const CurrentWeather = (props) => {
 
-  
+  console.log(props)
   return (
     <section className='currentWeather'>
       <article className='currentWeather__details'>
-        <h2>{Math.round((props.weather.temp) / 10) }°<span>C</span></h2>
-        <h3>{props.weather.name}</h3>
+        <h2>{Math.round(props.weather.temp) }°<span>C</span></h2>
+        <h3>{props.weatherMore.city.name}</h3>
         <ul className="currentWeater__stats">
           <li>
             <span>Wind</span>
@@ -23,7 +23,7 @@ const CurrentWeather = (props) => {
       </article>
       <article className='currentWeather__more'>
         <picture className='currentWeather__img'>
-          <img src="" alt="weather" />
+          <img src={`http://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`} alt="weather" />
         </picture>
         <div className="currentWeather__actual">
           {props.weather.weather.map((type)=> <h3 key={type.id}>{type.description}</h3>)}

@@ -1,6 +1,5 @@
 import { CurrentWeather } from './components/CurrentWeather';
 import { ListDays } from './components/ListDays';
-import { Day } from './components/Day';
 import './App.css';
 
 import {useApi} from './useApi'
@@ -13,7 +12,9 @@ function App() {
     days,
     setDays,
     loading,
-    setLoading
+    setLoading,
+    weatherMore,
+    setWeatherMore,
 
   } = useApi();
 
@@ -27,6 +28,9 @@ function App() {
       <CurrentWeather
         weather={weather}
         setWeather={setWeather}
+
+        weatherMore={weatherMore}
+        setWeatherMore={setWeatherMore}
 
         loading={loading}
         setLoading={setLoading}

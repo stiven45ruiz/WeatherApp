@@ -1,12 +1,12 @@
 .currentWeather{
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
   align-items: center;
 
 }
 .currentWeather__details{
-  margin: 0 auto;
+  justify-self: end;
 }
 .currentWeather__details > h2{
   font-size: 8rem;
@@ -22,8 +22,9 @@
   vertical-align: super;
 }
 .currentWeather__more{
+  justify-self: start;
   font-size: 1.6rem;
-  margin: 0 30px;
+  margin-left: 80px;
 }
 
 .currentWeater__stats{

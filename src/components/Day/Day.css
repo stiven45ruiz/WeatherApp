@@ -1,3 +1,5 @@
 .day__weather{
-  margin: 10px;
+  width: 200px;
+  margin: 0 20px;
+  padding: 10px;
 }

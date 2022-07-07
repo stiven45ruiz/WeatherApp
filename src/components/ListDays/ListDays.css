@@ -1,6 +1,6 @@
 .days__scroll{
   width: auto;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow-x: scroll;
 }
 .days__scroll::-webkit-scrollbar {

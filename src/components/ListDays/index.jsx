@@ -4,7 +4,6 @@ import { Day } from '../Day'
 import './ListDays.css'
 
 const ListDays = (props) => {
-  console.log(props.days)
   return (
     <div className='days__scroll'>
       <ul className='list__days'>
