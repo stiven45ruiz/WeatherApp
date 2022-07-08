@@ -1,9 +1,11 @@
-import { CurrentWeather } from './components/CurrentWeather';
-import { ListDays } from './components/ListDays';
-import './App.css';
-
 import {useApi} from './useApi'
 import React from 'react';
+
+import { CurrentWeather } from './components/CurrentWeather';
+import { ListDays } from './components/ListDays';
+import { ListHours } from './components/ListHours';
+import './App.css';
+
 
 function App() {
   const {
@@ -11,6 +13,8 @@ function App() {
     setWeather,
     days,
     setDays,
+    hours,
+    setHours,
     loading,
     setLoading,
     weatherMore,
@@ -24,7 +28,6 @@ function App() {
 
   return (
     <div className="App">
-      <p>Hola soy app</p>
       <CurrentWeather
         weather={weather}
         setWeather={setWeather}
@@ -32,6 +35,13 @@ function App() {
         weatherMore={weatherMore}
         setWeatherMore={setWeatherMore}
 
+        loading={loading}
+        setLoading={setLoading}
+      />
+      <ListHours
+        
+        hours={hours}
+        setHours={setHours}
         loading={loading}
         setLoading={setLoading}
       />

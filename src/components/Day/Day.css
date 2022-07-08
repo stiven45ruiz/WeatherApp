@@ -3,3 +3,7 @@
   margin: 0 20px;
   padding: 10px;
 }
+.day__weather p{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}

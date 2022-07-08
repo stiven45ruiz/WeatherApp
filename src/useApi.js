@@ -3,13 +3,14 @@ import React, {useState, useEffect} from "react";
 const axios = require('axios');
 
 const useApi = () =>{
-  const [weather, setWeather] = useState(null)
-  const [weatherMore, setWeatherMore] = useState(null)
-  const [days, setDays] = useState(null)
-  const [loading, setLoading] = useState(true)
-
+  const [weather, setWeather] = useState(null);
+  const [weatherMore, setWeatherMore] = useState(null);
+  const [days, setDays] = useState(null);
+  const [hours, setHours]= useState(null);
+  const [loading, setLoading] = useState(true);
   
-
+  
+  //Configuracion de axios
   const api = axios.create({
     baseURL: process.env.REACT_APP_API,
     headers: {
@@ -21,33 +22,35 @@ const useApi = () =>{
     },
   });
 
+
+  //Llamado a la Api 
   useEffect(() => {
     const CallToApi = async() =>{
       const {data} = await api(`onecall?lat=3.5628657092422573&lon=-73.79595019932982`);
-      try {
+
         setWeather(data.current)
         setDays(data.daily)
-      } catch (error) {
-        setLoading(true)
-        console.log(error)
-      }
-      console.log(data)
-      setLoading(false)
+        setHours(data.hourly)
+      
+      console.log(data, 'callfirstApi')
     };
-    CallToApi();
+    
 
     const CallMoreInfoApi = async() =>{
       const {data} = await api(`forecast?lat=3.5628657092422573&lon=-73.79595019932982`);
-      try {
-        setWeatherMore(data)
-      } catch (error) {
-        setLoading(true)
-        console.log(error)
-      }
+
+      setWeatherMore(data)
+      
       console.log(data, 'call more api')
       setLoading(false)
+
     };
-    CallMoreInfoApi();
+    
+    CallToApi().then(()=> {
+      CallMoreInfoApi();
+    });
+
+
   }, [])
 
 
@@ -60,6 +63,8 @@ const useApi = () =>{
     setWeather,
     days,
     setDays,
+    hours,
+    setHours,
     loading,
     setLoading,
     weatherMore, 

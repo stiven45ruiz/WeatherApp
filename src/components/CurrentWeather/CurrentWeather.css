@@ -3,10 +3,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 50%));
   align-items: center;
+  justify-content: center;
 
 }
 .currentWeather__details{
-  justify-self: end;
+  justify-self: center;
 }
 .currentWeather__details > h2{
   font-size: 8rem;
@@ -15,6 +16,10 @@
 .currentWeather__details > h3{
   font-size: 3rem;
   font-weight: 600;
+}
+.currentWeather__details > h4{
+  font-size: 2rem;
+  font-weight: 400;
 }
 .currentWeather__details > h2 > span{
   font-size: 4rem;
@@ -29,10 +34,10 @@
 
 .currentWeater__stats{
   list-style: none;
-  margin: 20px;
+  margin: 20px 0;
 }
 .currentWeater__stats > li{
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 .currentWeater__stats > li > span{
   padding-right: 5px;
