@@ -7,7 +7,7 @@ const CurrentWeather = (props) => {
   return (
     <section className='currentWeather'>
       <article className='currentWeather__details'>
-        <h2>{Math.round(props.weather.temp) }°<span>C</span></h2>
+        <h2>{Math.round(props.weather.temp)}<span>C</span></h2>
         <h3>{props.weatherMore.city.name}</h3>
         <ul className="currentWeater__stats">
           <li>
