@@ -1,11 +1,12 @@
-import {useApi} from './useApi'
 import React from 'react';
+
+import { useGeoLocation } from './useGeoLocation';
+import { useApi } from './useApi'
 
 import { CurrentWeather } from './components/CurrentWeather';
 import { ListDays } from './components/ListDays';
 import { ListHours } from './components/ListHours';
 import './App.css';
-
 
 function App() {
   const {
@@ -22,7 +23,11 @@ function App() {
 
   } = useApi();
 
-  if(loading){
+  const {
+    geoLoading,
+  } = useGeoLocation();
+
+  if(loading || geoLoading){
     return <p>loading...</p>
   }
 

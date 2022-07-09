@@ -6,7 +6,7 @@ import './ListDays.css'
 const ListDays = (props) => {
   return (
     
-    <div>
+    <div className='content__days'>
       <p className='days__text'>Prediction of the next days</p>
 
       <section className='days__scroll'>
