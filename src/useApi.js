@@ -9,11 +9,7 @@ const useApi = () =>{
     latitude,
     longitude,
   } = useGeoLocation(); 
-
-
-  // console.log(latitude)
-
-
+  
   const [weather, setWeather] = useState(null);
   const [weatherMore, setWeatherMore] = useState(null);
   const [days, setDays] = useState(null);
@@ -65,6 +61,12 @@ const useApi = () =>{
       });
     }
 
+    //El comentario siguente a la matriz de dependencias deshabilita 
+    //la regla para una sola línea.react-hooks/exhausting-deps 
+    //Quitalo para mas información ó https://bobbyhadz.com/blog/react-hook-useeffect-has-missing-dependency
+
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [latitude])
 
 
