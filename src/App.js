@@ -9,6 +9,7 @@ import { CurrentWeather } from './components/CurrentWeather';
 import { ListDays } from './components/ListDays';
 import { ListHours } from './components/ListHours';
 import { Map } from './components/Map';
+import { LoadingSkeleton } from './components/LoadingSkeleton'
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
   } = useGeoLocation();
 
   if(loading || geoLoading){
-    return <p>loading...</p>
+    return <LoadingSkeleton/>
   }
 
   return (
