@@ -5,7 +5,7 @@ import '../ListDays/ListDays.css'
 const ListHours = (props) => {
   return (
     <div className='content__days'>
-      <p className='days__text'>En las Proximas horas</p>
+      <p className='days__text'>En the next few hours</p>
 
       <section className='days__scroll'>
         <ul className='list__days'>

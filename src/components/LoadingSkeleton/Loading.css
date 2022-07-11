@@ -1,0 +1,12 @@
+ .loading__container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .loading__container > img{
+  width: 70%;
+  border-radius: 50px;
+ }

@@ -14,6 +14,7 @@ const useApi = () =>{
   const [weatherMore, setWeatherMore] = useState(null);
   const [days, setDays] = useState(null);
   const [hours, setHours]= useState(null);
+  const [allData, setAllData] = useState(null)
   const [loading, setLoading] = useState(true);
   
   
@@ -38,6 +39,7 @@ const useApi = () =>{
       const CallToApi = async() =>{
         const {data} = await api(`onecall?lat=${latitude}&lon=${longitude}`);//lat=${latitude}&lon=${longitude}
   
+          setAllData(data)
           setWeather(data.current)
           setDays(data.daily)
           setHours(data.hourly)
@@ -84,7 +86,9 @@ const useApi = () =>{
     loading,
     setLoading,
     weatherMore, 
-    setWeatherMore
+    setWeatherMore,
+    allData,
+    setAllData
   };
 };
 

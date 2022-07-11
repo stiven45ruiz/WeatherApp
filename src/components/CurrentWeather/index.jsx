@@ -4,7 +4,6 @@ import { faDroplet, faMoon, faSun, faWind } from '@fortawesome/free-solid-svg-ic
 
 const CurrentWeather = (props) => {
   console.log(props.weather, "currentWeacher")
-
   
   //Convercion de .dt UTC a formato humano
   const ConvertNewDate = (dt)=>{
@@ -20,6 +19,7 @@ const CurrentWeather = (props) => {
   //Convercion de .sunrise y .sunset UTC a formato humano
   let sunriseDate = ConvertNewDate(props.weather.sunrise);
   let sunsetDate = ConvertNewDate(props.weather.sunset);
+  let hourGetData = ConvertNewDate(props.weather.dt)
 
   const humanDateFarmatHours = (dtWithMilisecounds) =>{
     return dtWithMilisecounds.toLocaleTimeString('en-us', {hour:"2-digit", minute:"2-digit"});
@@ -27,14 +27,15 @@ const CurrentWeather = (props) => {
 
   sunriseDate = humanDateFarmatHours(sunriseDate)
   sunsetDate = humanDateFarmatHours(sunsetDate)
-  
+  hourGetData = humanDateFarmatHours(hourGetData)
 
   return (
     <section className='currentweather'>
       
       <article className='currentweather__details'>
         <h2>{Math.round(props.weather.temp)}<span>C</span></h2>
-        <h3>{props.weatherMore.city.name}</h3>
+        <h3>{`${props.weatherMore.city.name} - ${props.allData.timezone.split('/')[1]}`}</h3>
+        <h4>Updated at {hourGetData}</h4>
         <h4>{humanDateFarmatToday}</h4>
       </article>
       
