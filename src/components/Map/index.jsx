@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../../leaflet/leaflet.css'
+import 'leaflet/dist/leaflet.css'
 import './Map.css'
 import {
   MapContainer,
