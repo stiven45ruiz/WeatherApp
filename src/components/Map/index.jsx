@@ -5,7 +5,6 @@ import './Map.css'
 import {
   MapContainer,
   TileLayer,
-  useMap,
   Marker
 } from 'react-leaflet';
 
