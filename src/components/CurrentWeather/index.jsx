@@ -42,7 +42,7 @@ const CurrentWeather = (props) => {
 
       <article className='currentweather__more'>
         <picture className='currentweather__img'>
-          <img src={`http://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`} alt="weather" />
+          <img src={`https://openweathermap.org/img/wn/${props.weather.weather[0].icon}@2x.png`} alt="weather" />
         </picture>
         <div className="currentweather__actual">
           {props.weather.weather.map((type)=> <h3 key={type.id}>{type.description}</h3>)}

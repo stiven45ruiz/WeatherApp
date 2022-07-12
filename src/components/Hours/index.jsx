@@ -8,7 +8,7 @@ const Hour = (props) => {
   return (
     <li className='day__weather'>
       <h3>{humanDateFarmat}</h3>
-      <img src={`http://openweathermap.org/img/wn/${props.day.weather[0].icon}@2x.png`} alt="day" />
+      <img src={`https://openweathermap.org/img/wn/${props.day.weather[0].icon}@2x.png`} alt="day" />
       <h4>{props.day.temp.toFixed(1)}°</h4>
       <p>Humidity <span>{props.day.humidity}%</span></p>
       <p>{props.day.weather[0].description}</p>
